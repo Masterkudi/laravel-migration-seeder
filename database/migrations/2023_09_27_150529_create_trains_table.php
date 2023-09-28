@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string("stazione_di_arrivo", 100);
             $table->timestamp("orario_di_partenza");
             $table->timestamp("orario_di_arrivo");
-            $table->integer("codice_treno", 50);
-            $table->integer("numero_carrozze", 100);
+            $table->decimal("codice_treno", 10);
+            $table->decimal("numero_carrozze", 50);
             $table->boolean("in_orario")->default(1);
             $table->boolean("cancellato")->default(0);
 

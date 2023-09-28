@@ -20,15 +20,15 @@ class TrainsTableSeeder extends Seeder
 
             $train = new Train();
             
-            $train->azienda = $faker->azienda();
-            $train->stazione_partenza = $faker->stazione_di_partenza();
-            $train->stazione_arrivo = $faker->stazione_di_arrivo();
-            $train->orario_partenza = $faker->orario_di_partenza();
-            $train->orario_arrivo = $faker->orario_di_arrivo();
-            $train->codice_treno = $faker->codice_treno(10000, 99999);
-            $train->numero_carrozze = $faker->numero_carrozze(1,12);
-            $train->in_orario = $faker->in_orario(0,1);
-            $train->cancellato = $faker->cancellato(0,1);
+            $train->azienda = $faker->companyName();
+            $train->stazione_partenza = $faker->city();
+            $train->stazione_arrivo = $faker->city();
+            $train->orario_partenza = $faker->time();
+            $train->orario_arrivo = $faker->time();
+            $train->codice_treno = $faker->numberBetween(100000, 999999);
+            $train->numero_carrozze = $faker->numberBetween(1, 25);
+            $train->in_orario = $faker->numberBetween(0,1);
+            $train->cancellato = $faker->numberBetween(0,1);
             
             $train->save();
     }
