@@ -17,10 +17,10 @@ return new class extends Migration
             $table->string("azienda", 100);
             $table->string("stazione_di_partenza", 100);
             $table->string("stazione_di_arrivo", 100);
-            $table->timestamp("orario_di_partenza");
-            $table->timestamp("orario_di_arrivo");
-            $table->decimal("codice_treno", 10);
-            $table->decimal("numero_carrozze", 50);
+            $table->dateTime("orario_di_partenza");
+            $table->dateTime("orario_di_arrivo");
+            $table->integer("codice_treno", 10);
+            $table->integer("numero_carrozze", 50);
             $table->boolean("in_orario")->default(1);
             $table->boolean("cancellato")->default(0);
 
@@ -33,8 +33,10 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //Schema::create('trains', function (Blueprint $table) {});
-        
+        Schema::create('trains', function (Blueprint $table) {
+
+        });
+
         Schema::dropIfExists('trains');
     }
 };
